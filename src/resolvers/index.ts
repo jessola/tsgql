@@ -1,14 +1,2 @@
-import { Query, Resolver } from 'type-graphql';
-
-@Resolver()
-export class HelloResolver {
-  @Query(() => String)
-  hello() {
-    return 'Hello World!';
-  }
-
-  @Query(() => String)
-  bye() {
-    return 'Goodbye World!';
-  }
-}
+export { PersonResolver } from './person';
+export { HelloResolver } from './hello';
