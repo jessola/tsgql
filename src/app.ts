@@ -10,14 +10,12 @@ import { HelloResolver } from './resolvers';
   const app = express();
   const { PORT = 8000 } = process.env;
 
-  // Entry point
+  /* REST Entrypoint */
   app.get('/', (req, res) => {
-    const gqlUrl = `${req.baseUrl}/graphql`;
-
-    res.send(`<a href="${gqlUrl}">Go to GraphQL Playground</a>`);
+    res.send(`<a href="${req.baseUrl}/graphql">Go to GraphQL Playground</a>`);
   });
 
-  // Scaffold graphql endpoint
+  /* Scaffold GraphQL Endpoint */
   const apolloServer = new ApolloServer({
     schema: await buildSchema({
       resolvers: [HelloResolver],
